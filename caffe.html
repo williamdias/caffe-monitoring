@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Caffe Training Monitoring</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- caffe.js -->
+    <script src="caffe.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row" style="background-color: #f6f6f6; padding: 20px 0px;">
+        <div class="col-xm-12 col-sm-6">
+          <div class="form-group">
+            <label for="filename">Filename</label>
+            <small class="text-warning">(should be inside public_html directory)</small>
+            <input type="text" class="form-control input-sm" id="filename">
+          </div>
+        </div>
+        <div class="col-xm-6 col-sm-3">
+          <div class="form-group">
+            <label for="interval">Interval</label>
+            <small class="text-warning">(in seconds)</small>
+            <input type="text" class="form-control input-sm" id="interval" value="60">
+          </div>
+        </div>
+        <div class="col-xm-6 col-sm-3">
+          <br class="hidden-xs">
+          <button id="start-stop" class="btn btn-primary">START</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xm-12">
+          <div id="chart"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
