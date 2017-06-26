@@ -66,6 +66,12 @@ Caffe.prototype.draw_chart = function(data) {
       actions: ['dragToZoom', 'rightClickToReset'],
       axis: 'horizontal',
       keepInBounds: true
+    },
+    hAxis: {
+      title: 'Iteration'
+    },
+    vAxis: {
+      title: 'Loss'
     }
   };
 
