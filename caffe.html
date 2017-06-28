@@ -21,6 +21,11 @@
             <small class="text-warning">(should be inside public_html directory)</small>
             <input type="text" class="form-control input-sm" id="filename">
           </div>
+          <div class="form-group">
+            <label for="classes">Classes</label>
+            <small class="text-warning">(comma separated values, ex: 0,1,2)</small>
+            <input type="text" class="form-control input-sm" id="classes">
+          </div>
         </div>
         <div class="col-xm-6 col-sm-3">
           <div class="form-group">
@@ -36,7 +41,8 @@
       </div>
       <div class="row">
         <div class="col-xm-12">
-          <div id="chart"></div>
+          <div id="chart-loss"></div>
+          <div id="chart-accuracy"></div>
         </div>
       </div>
     </div>
