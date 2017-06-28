@@ -11,18 +11,20 @@ A simple tool for monitoring caffe training process. Clone this repository into 
 4. When accessing your public_html page from a web browser, if *log.txt* is listed under caffe-monitoring directory, then you are good to go.
 5. Open *caffe.html* and type *log.txt* in the Filename input.
 6. Choose polling interval for chart updates (defaults to 60 seconds).
+7. Press start button.
 
 ### Plotting accuracies
 
 If you would like to also plot test accuracies, you may want to write your own python layer for that. As the caffe-monitoring tool uses regular expressions to fetch data from caffe logs, some rules should be followed when printing your results.
 
-1. To plot individual accuracies for each class of your problem: `class = {0}, accuracy = {1}".format(class, '%.3f' % accuracy)`
-
+1. To plot individual accuracies for each class of your problem: 
+`print "Test result: class = {0}, accuracy = {1}".format(class, '%.3f' % accuracy)`
 2. To plot the mean accuracy:
- `print "Test result: mean, accuracy = {1}".format(class, '%.3f' % numpy.mean(accuracies))`
-
+`print "Test result: mean, accuracy = {1}".format(class, '%.3f' % numpy.mean(accuracies))`
 3. Do not forget to force the buffer to stdout after the these printing:
 `sys.stdout.flush()`
-
+4. In the Classes input, type the classes your would like to plot values to. The list must be comma-separated. Ex: 0,1,2.
+5. Press stop button.
+6. Press start button.
 
 
