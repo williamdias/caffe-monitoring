@@ -4,9 +4,15 @@ var Caffe = function(filename, interval, classes) {
   this.classes = classes.split(',');
 }
 
+Caffe.prototype.get_data_single = function(data, re) {
+  var match, result;
+  match = re.exec(data);
+  return (match != null ? match[1] : null);
+}
+
 Caffe.prototype.get_data = function(data, re) {
   var match, result = [];
-  while (match = re.exec(data)) {
+  while(match = re.exec(data)) {
     result.push(match[1]);
   }
   return result;
@@ -66,7 +72,6 @@ Caffe.prototype.prepare_data_accuracy = function(data) {
     row[j+1] = parseFloat(mean[i]);
     all_data[i] = row;
   }
-  console.log(all_data)
   return all_data;
 }
 
@@ -109,7 +114,8 @@ Caffe.prototype.draw_chart_accuracy = function(data) {
   var chart_data = new google.visualization.DataTable();
   chart_data.addColumn('number', 'Iteration');
   for(var i = 0; i < this.classes.length; i++) {
-    chart_data.addColumn('number', 'Class ' + this.classes[i]);
+    var label = this.get_data_single(data, new RegExp('Label for class ' + this.classes[i] + ' = (.+)'));
+    label != null ? chart_data.addColumn('number', 'Class ' + label) : chart_data.addColumn('number', 'Class ' + this.classes[i]);
   }
   chart_data.addColumn('number', 'Mean');
   chart_data.addRows(this.prepare_data_accuracy(data));

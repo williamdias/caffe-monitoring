@@ -21,10 +21,12 @@ If you would like to also plot test accuracies, you may want to write your own p
 `print "Test result: class = {0}, accuracy = {1}".format(class, '%.3f' % accuracy)`
 2. To plot the mean accuracy:
 `print "Test result: mean, accuracy = {1}".format(class, '%.3f' % numpy.mean(accuracies))`
-3. Do not forget to force the buffer to stdout after the these printing:
+3. To print class labels instead of numbers:
+`print "Label for class {0} = {1}".format(class, class_label)`
+4. Do not forget to force the buffer to stdout after the these printing:
 `sys.stdout.flush()`
-4. In the Classes input, type the classes your would like to plot values to. The list must be comma-separated. Ex: 0,1,2.
-5. Press stop button.
-6. Press start button.
+5. In the Classes input, type the classes your would like to plot values to. The list must be comma-separated. Ex: 0,1,2.
+6. Press stop button.
+7. Press start button.
 
 
